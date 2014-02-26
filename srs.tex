@@ -1,178 +1,148 @@
 \documentclass[a4paper]{article}
-\usepackage{graphicx}
 
 \begin{document}
 
-	\title{\Huge{Software Requirement Specification}}
-	\author{Group 8}
-	\maketitle
+\title{\Huge{Software Requirement Specification}}
+\author{Group 8}
+\maketitle
 
-	\section{Introduction}
+\section{Introduction}
 
-		The purpose of this document is to present a detailed description for the mark record and tracking solution. It will explain the purpose and features of the system, what the system will do, as well as the constraints under which it must operate. This document is intended as an official contract between the stakeholders and developers of the system.
+The purpose of this document is to present a detailed description for the mark record and tracking solution. It will explain the purpose and features of the system, what the system will do, as well as the constraints under which it must operate. This document is intended as an official contract between the stakeholders and developers of the system.
 
-	\section{Vision}
+\section{Vision}
 
-		The software solution will be aimed at providing a means for markers in a practical session to record student marks from a mobile device. The purpose is to allow for more efficient marking process, from initial recording of marks to the feedback of results for both lecturer and student. The system should manage recorded marks while ensuring proper authorization to any access of the data it contains. There would be three different user responsibilities, namely: lecturer, marker, and student.
-		
-		\subsection{Lecturer}
-			\begin{itemize}
-				\item	Full access to create, read, update and delete data within the lecturer's subject(s).
-				\item	Ability to define practical sessions and associate mark allocations to these sessions.
-				\item	Ability to open and close the mark inputs for practical sessions.
-				\item	Ability to assign markers to practical sessions to enable access to data entry according to a time slot.
-				\item	All activity on the system is logged for accountability during auditing.
-				\item	Compiling of reports from practical marks.
-			\end{itemize}
+The software solution will be aimed at providing a means for markers in a practical session to record student marks from a mobile device. The purpose is to allow for more efficient marking process, from initial recording of marks to the feedback of results for both lecturer and student. The system should manage recorded marks while ensuring proper authorization to any access of the data it contains. There would be three different user responsibilities, namely: lecturer, marker, and student.
 
-		\subsection{Marker}
-			\begin{itemize}
-				\item	Greater efficiency at locating the appropriate student for marking through search functionality.
-				\item	Recording marks according to mark sheet set up by lecturer.
-				\item	Having a centralized marking environment from which all responsibilities as a marker are accessible.
-			\end{itemize}
+\subsection{Lecturer}
+\begin{itemize}
+\item	Full access to create, read, update and delete data within the lecturer's subject(s).
+\item	Ability to define practical sessions and associate mark allocations to these sessions.
+\item	Ability to open and close the mark inputs for practical sessions.
+\item	Ability to assign markers to practical sessions to enable access to data entry according to a time slot.
+\item	All activity on the system is logged for accountability during auditing.
+\item	Compiling of reports from practical marks.
+\end{itemize}
 
-		\subsection{Student}
-			\begin{itemize}
-				\item	Faster access to marks progress.
-				\item	Ability to view track record and performance.
-				\item	Provides accountability of markers involved during mark queries.
-			\end{itemize}
+\subsection{Marker}
+\begin{itemize}
+\item	Greater efficiency at locating the appropriate student for marking through search functionality.
+\item	Recording marks according to mark sheet set up by lecturer.
+\item	Having a centralized marking environment from which all responsibilities as a marker are accessible.
+\end{itemize}
 
-	\section{Background}
+\subsection{Student}
+\begin{itemize}
+\item	Faster access to marks progress.
+\item	Ability to view track record and performance.
+\item	Provides accountability of markers involved during mark queries.
+\end{itemize}
 
-		Currently the marking process is performed using physical documents. It is required of the marker to obtain a mark sheet from the lecturer, on which the student identification is paired with the results from the practical session. The data is then captured by a third party. This system lacks in accountability and efficiency which can be solved through a software solution and eliminating the need of a third party. The likelihood of marks being lost would also decrease as the data transfer process is diminished from a three step process (marker $\rightarrow$ entry $\rightarrow$ lecturer) to a direct process (marker $\rightarrow$ lecturer). As a result, students would also be able to receive quicker feedback on their work.
 
-	\section{Architectural Requirements}
+\section{Background}
+Currently the marking process is performed using physical documents. It is required of the marker to obtain a mark sheet from the lecturer, on which the student identification is paired with the results from the practical session. The data is then captured by a third party. This system lacks in accountability and efficiency which can be solved through a software solution and eliminating the need of a third party. The likelihood of marks being lost would also decrease as the data transfer process is diminished from a three step process (marker $\rightarrow$ entry $\rightarrow$ lecturer) to a direct process (marker $\rightarrow$ lecturer). As a result, students would also be able to receive quicker feedback on their work.
 
-		\subsection{Access Channel Requiremnets}
+\section{Architectural Requirements}
 
-			\begin{itemize}
+\subsection{Access Channel Requirements}
 
-				\item{An Item}
+\begin{itemize}
 
-				\item{Another Item}
+\item An android application must be created for marker.
+\item This application will be available to the marker at all times.
+\item A web interface will be created for the Lecturer and the students
+\item The system will access the University's current LDAP system for authentication purposes
 
-			\end{itemize}
+\end{itemize}
 
-		\subsection{Quality Requirements}
+\subsection{Quality Requirements}
 
-			\begin{enumerate}
+\begin{enumerate}
 
-				\item{An Item}
+\item Security:
+\begin{itemize}
+\item The lecturer will set the privileges of the markers.
+\item Fields will are selected will be locked to ensure mutual exclusion.
+\item Students will only be able access their own marks.
+\item SSL will be used for encryption during data transfer.
+\end{itemize}
+\item Performance:
+\begin{itemize}
+\item The system must be able to handle a large number of concurrent users without slowing down response time to anything less than 0.5 seconds.
+\end{itemize}
+\item Reliability:
+\begin{itemize}
+\item Software reliability is measured in terms mean time between failures. This consists of mean time to failure and mean time to repair. Reliability between 0 and 1 is good.
+\end{itemize}
+\item Scalability:
+\begin{itemize}
+\item The system must be able to handle an increase in the number of departments using it.
+\item The system also needs to have increased functionality at low cost.
+\end{itemize}
+\item Flexibility:
+\begin{itemize}
+\item The system would need to flexible in the sense that it could be easily adapted to fit new rules and regulations set out to the department or rules set out by a different department.
+\end{itemize}
+\item Maintainability:
+\begin{itemize}
+\item The software needs to have measures put in place where errors are easily identifiable and easy to fix. 
+\item Unexpected break downs can be traced back to its source.
+\item It must be able to cope with a changed environment.
+\end{itemize}
+\item Audit-ability:
+\begin{itemize}
+\item A log must be kept, which records everything that happens in the system
+\item Lecturers will generate reports from the marks entered
+\end{itemize}
+\item Integrability:
+\begin{itemize}
+\item The system must integrate into the system that is already being used by the Department.
+\item This involves the use of python, DJANGO and SOAP.
+\end{itemize}
+\item Usability:
+\begin{itemize}
+\item First and foremost users must be able to complete the tasks they are allowed to do, otherwise the system is pointless.
+\item Any errors caused by the user must be easy to understand and clear.
+\item A record of any errors must be kept.
+\end{itemize}
+\item Cost:
+\begin{itemize}
+\item The system must be affordable. Nothing more than what is currently in place.5
+\end{itemize}
+\end{enumerate}
 
-				\item{Another Item}
+\subsection{Integration Requirements}
 
-			\end{enumerate}
+\begin{description}
 
-		\subsection{Integration Requirements}
+\item[first]{An Item} Interface with the current booking system used by the Department.
+\item[second]{Another Item} It will use Lightweight Directory Access Protocol along with a SOAP interface.
+\item[third] Python and it's DJANGO framework will be used.
+\item[fourth] Databases and servers used by the Department will also need to integrate with the system 
 
-			\begin{description}
+\end{description}
 
-				\item[first]{An Item}
+\subsection{Architecture Constraints}
 
-				\item[second]{Another Item}
+\section{Functional Requirements}
 
-			\end{description}
+\subsection{Introduction}
 
-		\subsection{Architecture Constraints}
-		
-			\subsubsection{Technologies}
-		
-				\begin{itemize}
+\subsection{Scope and Limitations/Exclusions}
 
-					\item{Client interface must run on an Android device}
+\subsection{Required Functionality}
 
-					\item{Client interface must be accessible through a web browser}
-					
-					\item{MySQL database must be used to store application data}
-					
-					\item{Python must be used in order to accommodate existing systems}
+\subsection{Use Case Prioritisation}
 
-				\end{itemize}
-				
-			\subsubsection{Frameworks}
-			
-				\begin{itemize}
+\subsection{Use Case/Service Contracts}
 
-					\item{The application must be able to interface with the Django framework}
+\subsection{Process Specification}
 
-				\end{itemize}
+\subsection{Domain Objects}
 
-	\section{Functional Requirements}
+\section{Open Issues}
 
-		\subsection{Introduction}
+\section{Glossary}
 
-			This section introduces the functional requirements of the system, as seen by the different stakeholders:
-
-			\subsubsection{Student}
-				\begin{flushleft}
-				A person who participates in examinable activities, for whom marks are recorded in the system. \linebreak 
-				
-				Students can:
-				\end{flushleft}
-				\begin{itemize}
-
-					\item{View Marks}
-
-				\end{itemize}
-
-			\subsubsection{Marker}
-				\begin{flushleft}
-				A person who is responsible for grading a student, and who has to record marks for all students who he/she has graded. \linebreak 
-				
-				Markers can:
-				\end{flushleft}
-				\begin{itemize}
-
-					\item{Input student marks}
-					
-					\item{View session marks}
-					
-					\item{Search for student}
-
-				\end{itemize}
-				
-			\subsubsection{Lecturer}
-				\begin{flushleft}
-				A person who is responsible for setting examinable activities, as well as the logistics and administration of a particular course. \linebreak 
-				
-				Lecturers can:
-				\end{flushleft}
-				\begin{itemize}
-
-					\item{Edit student marks}
-					
-					\item{View all marks}
-					
-					\item{Search for student}
-					
-					\item{Generate reports}
-					
-					\item{Assign system functions to Markers}
-					
-					\item{Create and edit marksheets}
-
-				\end{itemize}
-			
-		\subsection{Scope and Limitations/Exclusions}
-			\begin{figure}[h]
-				\caption{High Level Use Case Diagram}
-				\includegraphics[height=10cm]{StudentMarks}
-			\end{figure}
-
-		\subsection{Required Functionality}
-
-		\subsection{Use Case Prioritisation}
-
-		\subsection{Use Case/Service Contracts}
-
-		\subsection{Process Specification}
-
-		\subsection{Domain Objects}
-
-	\section{Open Issues}
-
-	\section{Glossary}
 
 \end{document}
