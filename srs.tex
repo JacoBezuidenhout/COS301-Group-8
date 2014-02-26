@@ -1,5 +1,4 @@
 \documentclass[a4paper]{article}
-<<<<<<< HEAD
 
 \begin{document}
 
@@ -49,9 +48,10 @@ Currently the marking process is performed using physical documents. It is requi
 
 \begin{itemize}
 
-\item{An Item}
-
-\item{Another Item}
+\item An android application must be created for marker.
+\item This application will be available to the marker at all times.
+\item A web interface will be created for the Lecturer and the students
+\item The system will access the University's current LDAP system for authentication purposes
 
 \end{itemize}
 
@@ -59,19 +59,66 @@ Currently the marking process is performed using physical documents. It is requi
 
 \begin{enumerate}
 
-\item{An Item}
-
-\item{Another Item}
-
+\item Security:
+\begin{itemize}
+\item The lecturer will set the privileges of the markers.
+\item Fields will are selected will be locked to ensure mutual exclusion.
+\item Students will only be able access their own marks.
+\item SSL will be used for encryption during data transfer.
+\end{itemize}
+\item Performance:
+\begin{itemize}
+\item The system must be able to handle a large number of concurrent users without slowing down response time to anything less than 0.5 seconds.
+\end{itemize}
+\item Reliability:
+\begin{itemize}
+\item Software reliability is measured in terms mean time between failures. This consists of mean time to failure and mean time to repair. Reliability between 0 and 1 is good.
+\end{itemize}
+\item Scalability:
+\begin{itemize}
+\item The system must be able to handle an increase in the number of departments using it.
+\item The system also needs to have increased functionality at low cost.
+\end{itemize}
+\item Flexibility:
+\begin{itemize}
+\item The system would need to flexible in the sense that it could be easily adapted to fit new rules and regulations set out to the department or rules set out by a different department.
+\end{itemize}
+\item Maintainability:
+\begin{itemize}
+\item The software needs to have measures put in place where errors are easily identifiable and easy to fix. 
+\item Unexpected break downs can be traced back to its source.
+\item It must be able to cope with a changed environment.
+\end{itemize}
+\item Audit-ability:
+\begin{itemize}
+\item A log must be kept, which records everything that happens in the system
+\item Lecturers will generate reports from the marks entered
+\end{itemize}
+\item Integrability:
+\begin{itemize}
+\item The system must integrate into the system that is already being used by the Department.
+\item This involves the use of python, DJANGO and SOAP.
+\end{itemize}
+\item Usability:
+\begin{itemize}
+\item First and foremost users must be able to complete the tasks they are allowed to do, otherwise the system is pointless.
+\item Any errors caused by the user must be easy to understand and clear.
+\item A record of any errors must be kept.
+\end{itemize}
+\item Cost:
+\begin{itemize}
+\item The system must be affordable. Nothing more than what is currently in place.5
+\end{itemize}
 \end{enumerate}
 
 \subsection{Integration Requirements}
 
 \begin{description}
 
-\item[first]{An Item}
-
-\item[second]{Another Item}
+\item[first]{An Item} Interface with the current booking system used by the Department.
+\item[second]{Another Item} It will use Lightweight Directory Access Protocol along with a SOAP interface.
+\item[third] Python and it's DJANGO framework will be used.
+\item[fourth] Databases and servers used by the Department will also need to integrate with the system 
 
 \end{description}
 
@@ -96,87 +143,6 @@ Currently the marking process is performed using physical documents. It is requi
 \section{Open Issues}
 
 \section{Glossary}
-=======
-\usepackage{graphicx}
 
-\begin{document}
-
-	\title{\Huge{Software Requirement Specification}}
-	\author{Group 8}
-	\maketitle
-
-	\section{Introduction}
-
-		Introduction
-
-	\section{Vision}
-
-		Vision
-
-	\section{Background}
-
-		Background
-
-	\section{Architectural Requirements}
-
-		\subsection{Access Channel Requiremnets}
-
-			\begin{itemize}
-
-				\item{An Item}
-
-				\item{Another Item}
-
-			\end{itemize}
-
-		\subsection{Quality Requirements}
-
-			\begin{enumerate}
-
-				\item{An Item}
-
-				\item{Another Item}
-
-			\end{enumerate}
-
-		\subsection{Integration Requirements}
-
-			\begin{description}
-
-				\item[first]{An Item}
-
-				\item[second]{Another Item}
-
-			\end{description}
-
-		\subsection{Architecture Constraints}
-
-	\section{Functional Requirements}
-
-		\subsection{Introduction}
-
-			This section is an introduction into the functional requirements of the system.
-
-		\subsection{Scope and Limitations/Exclusions}
-		
-			\begin{figure}[h]
-				\caption{High Level Use Case Diagram}
-				\includegraphics[height=15cm]{StudentMarks}
-			\end{figure}
-
-		\subsection{Required Functionality}
-
-		\subsection{Use Case Prioritisation}
-
-		\subsection{Use Case/Service Contracts}
-
-		\subsection{Process Specification}
-
-		\subsection{Domain Objects}
-
-	\section{Open Issues}
-
-	\section{Glossary}
->>>>>>> Inserted UML diagram as a figure
 
 \end{document}
