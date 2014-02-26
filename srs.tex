@@ -1,5 +1,6 @@
 \documentclass[a4paper]{article}
 \usepackage{graphicx}
+\usepackage{float}
 
 \begin{document}
 
@@ -162,7 +163,7 @@
 			\subsection{Scope and Limitations/Exclusions}
 			\begin{figure}[h]
 				\caption{High Level Use Case Diagram}
-				\includegraphics[height=10cm]{StudentMarks}
+				%\includegraphics[height=10cm]{StudentMarks}
 			\end{figure}
 
 		\subsection{Required Functionality}
@@ -194,33 +195,40 @@
 		\item The system will provide documents in .csv format as exports of marks to lecturers.
 		
 		\end{enumerate}
-			\begin{figure}[h]
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1\textwidth]{logIn}
 				\caption{Low Level Use Case Diagrams- Log In}
-				\includegraphics[height=7cm]{logIn}
 			\end{figure}
-			\begin{figure}[h]
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1\textwidth]{createSession}
 				\caption{Create Session}
-				\includegraphics[height=7cm]{createSession}
 			\end{figure}
-			\begin{figure}[h]
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1\textwidth]{viewMarks}
 				\caption{View Marks}
-				\includegraphics[height=7cm]{viewMarks}
 			\end{figure}
-			\begin{figure}[h]
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1\textwidth]{generateReport}
 				\caption{Generate Report}
-				\includegraphics[height=7cm]{generateReport}
 			\end{figure}
-			\begin{figure}[h]
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1\textwidth]{enterMarks}
 				\caption{Enter Marks}
-				\includegraphics[height=7cm]{enterMarks}
 			\end{figure}
-			\begin{figure}[h]
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1\textwidth]{editMarks}
 				\caption{Edit Marks}
-				\includegraphics[height=7cm]{editMarks}
 			\end{figure}
-			\begin{figure}[h]
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1\textwidth]{searchStudent}
 				\caption{Search Student}
-				\includegraphics[height=7cm]{searchStudent}
 			\end{figure}
 
 		\subsection{Use Case Prioritisation}
