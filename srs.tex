@@ -4,7 +4,11 @@
 \begin{document}
 
 	\title{\Huge{Software Requirement Specification}}
-	\author{Group 8}
+	\author{Group 8 \\ J Lewis	28183488\\
+	TGN Machaba	12078027\\
+	NS Manana	12064115\\
+	JF Maree	28004265\\
+	A Volschenk	12054519}
 	\maketitle
 
 	\section{Introduction}
@@ -220,7 +224,30 @@
 			\end{figure}
 
 		\subsection{Use Case Prioritisation}
-
+			\begin{enumerate}
+			\item Critical: System is cancelled if functionality is not provided.
+			\begin{itemize}
+			\item{Lock System - System runs the risk of security breaches if it is not locked.}
+			\item{View Marks - The system is rendered useless if users cannot view the marks and details of students whose marks have been entered.}
+			\item{Login - Important for access control to prevent unauthorised users entering the system.}
+			\item {Set privileges - The system can be susceptible to hacking and corruption of data if this requirement isn't included, which will result in a useless system}
+			\item {Create Session - Without this ability the system wouldn't have students to assign to be marked thus rendering the system useless.}
+			\item {Edit Marks - Without this functionality the system is susceptible to have incorrect data due to human error that cannot be fixed once entered.}
+			\item {Check validity of editor - Once again the system will run the risk of corruption of data if the editor is not authorised to edit the marks.}
+			\item {Enter Marks - The marker and lecturer must be able to enter marks otherwise the system is rendered useless.}
+			\item {Sanitize input - Invalid input will corrupt the data rendering the system useless.}
+			\end{itemize}
+			\item Important: System still functional without requirement but client will get less value from it.
+			\begin{itemize}
+			\item {Search Student - One can still scroll down the list to find a student and the functionality will still remain intact but the system will be less useful.}
+			\item { Generate Report - The functionality of recording the marks and storing them in a database is still intact but the system is less useful if you cannot interpret the results}
+			\item { Record edits in history trail - This is necessary for accountability if a marker or lecturer changes the marks of students.}
+			\end{itemize}
+			\item Nice-to-have: Specified requirement but its value is insignificant.
+			\begin{itemize}
+				\item{Update database in real-time - This isn't a requirement essential for the functioning for the system but it will make the system more efficient}		
+			\end{itemize}
+			\end{enumerate}
 		\subsection{Use Case/Service Contracts}
 
 		\subsection{Process Specification}
