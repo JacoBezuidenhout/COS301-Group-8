@@ -229,24 +229,164 @@
 				\item 	\textbf{View Student Marks [UC1]}\\*
 						\textit{Pre-Conditions:}
 								\begin{itemize}
-									\item Student is registered for module.
+									\item The student must be registered for the module.
+									\item The student's session marksheet should be locked.
 								\end{itemize}
 								
 						\textit{Post-Conditions:}
 								\begin{itemize}
-									\item Marks viewed added to the Log.
+									\item Marks viewed by a student is added to the Log.
 								\end{itemize}
 														
 				\item	\textbf{View Session Marks [UC2]}\\*
 						\textit{Pre-Conditions:}
 								\begin{itemize}
-									\item Marker is the designated marker for session.
+									\item The marker must be the designated marker for the session.
 								\end{itemize}
 								
 						\textit{Post-Conditions:}
 								\begin{itemize}
-									\item Marks viewed added to the Log.
-								\end{itemize}			
+									\item Marks viewed by the marker is added to the Log.
+								\end{itemize}
+														
+				\item	\textbf{Enter Marks[UC3]}\\*
+						\textit{Pre-Conditions:}
+								\begin{itemize}
+									\item The marker must be the designated marker for the session.
+									\item The student being marked must be registered for the session.
+									\item The session should be open and not locked.
+								\end{itemize}
+								
+						\textit{Post-Conditions:}
+								\begin{itemize}
+									\item The students's marks are in the database.
+									\item The student's Marks have been entered is added to the Log.
+								\end{itemize}
+														
+				\item	\textbf{Edit Marks[UC4]}\\*
+						\textit{Pre-Conditions:}
+								\begin{itemize}
+									\item The Lecturer must be a Lecturer for the module.
+								\end{itemize}
+								
+						\textit{Post-Conditions:}
+								\begin{itemize}
+									\item The new marks are in the databse.
+									\item The mark changes are added to the Log.
+								\end{itemize}
+														
+				\item	\textbf{Search Student[UC5]}\\*
+						\textit{Pre-Conditions:}
+								\begin{itemize}
+									\item The student must be registered for the module or session.
+								\end{itemize}
+								
+						\textit{Post-Conditions:}
+								\begin{itemize}
+									\item None
+								\end{itemize}
+														
+				\item	\textbf{Set Marker Privileges[UC6]}\\*
+						\textit{Pre-Conditions:}
+								\begin{itemize}
+									\item The lecturer must be a Lecturer for the module.
+									\item The marker must be designated to the module as a marker.
+								\end{itemize}
+								
+						\textit{Post-Conditions:}
+								\begin{itemize}
+									\item The marker's privileges are set in the databse.
+									\item The marker's Privilege changes are added to the Log.
+								\end{itemize}
+														
+				\item	\textbf{Generate Reports[UC7]}\\*
+						\textit{Pre-Conditions:}
+								\begin{itemize}
+									\item The Lecturer must be a Lecturer for the module.
+									\item The sessions should all be locked.
+								\end{itemize}
+								
+						\textit{Post-Conditions:}
+								\begin{itemize}
+									\item None
+								\end{itemize}
+														
+				\item	\textbf{Create Marksheet[UC8]}\\*
+						\textit{Pre-Conditions:}
+								\begin{itemize}
+									\item The Lecturer must be a Lecturer for the module.
+									\item The marksheet should not already exist.
+								\end{itemize}
+								
+						\textit{Post-Conditions:}
+								\begin{itemize}
+									\item The new Marksheet is created.
+									\item The Marksheet creation is added to the Log.
+								\end{itemize}
+														
+				\item	\textbf{Edit Marksheet[UC9]}\\*
+						\textit{Pre-Conditions:}
+								\begin{itemize}
+									\item The Lecturer must be a Lecturer for the module.
+									\item The marksheet should already exist.
+								\end{itemize}
+								
+						\textit{Post-Conditions:}
+								\begin{itemize}
+									\item The Changes are saved to the marksheet.
+									\item The Marksheet was edited is added to the Log.
+								\end{itemize}
+														
+				\item	\textbf{Create Session[UC10]}\\*
+						\textit{Pre-Conditions:}
+								\begin{itemize}
+									\item The Lecturer must be a Lecturer for the module.
+									\item The session should not already exist.
+								\end{itemize}
+								
+						\textit{Post-Conditions:}
+								\begin{itemize}
+									\item A new session is created.
+									\item The session creation is added to the Log.
+								\end{itemize}
+														
+				\item	\textbf{Assign Marker to group[UC11]}\\*
+						\textit{Pre-Conditions:}
+								\begin{itemize}
+									\item The Lecturer must be a Lecturer for the module.
+									\item The Marker must be a designated marker for the module.
+								\end{itemize}
+								
+						\textit{Post-Conditions:}
+								\begin{itemize}
+									\item The marker is designated to a group.
+									\item The marker's assignment to group is added to the Log.
+								\end{itemize}
+														
+				\item	\textbf{Login[UC12]}\\*
+						\textit{Pre-Conditions:}
+								\begin{itemize}
+									\item The user must be a valid user with valid credentials.
+									\item The user should not already be logged in.
+								\end{itemize}
+								
+						\textit{Post-Conditions:}
+								\begin{itemize}
+									\item Privileges are set for the user's current session.
+									\item The user's Login time is added to the Log.
+								\end{itemize}
+														
+				\item	\textbf{View all marks[UC13]}\\*
+						\textit{Pre-Conditions:}
+								\begin{itemize}
+									\item The Lecturer must be a Lecturer for the module.
+									\item The sessions should all be locked.
+								\end{itemize}
+								
+						\textit{Post-Conditions:}
+								\begin{itemize}
+									\item None
+								\end{itemize}
 			\end{itemize}
 
 		\subsection{Process Specification}
@@ -258,9 +398,9 @@
 	\section{Glossary}
 		
 		\begin{itemize}
-			\item UC* - Use Case * (where '*' represents a number)
-			\item Pre-Condition - A condition that must be satisfied Before the given use case.
-			\item Post-Condition - A condition that must be satisfied After the given use case.
+			\item UC* - Use Case number * (where '*' represents a number)
+			\item Pre-Condition - A condition that must be satisfied Before the given service or use case.
+			\item Post-Condition - A condition that must be satisfied After the given service or use case.
 		\end{itemize}
 
 \end{document}
