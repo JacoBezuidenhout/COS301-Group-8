@@ -1,10 +1,15 @@
 \documentclass[a4paper]{article}
 \usepackage{graphicx}
+\usepackage{float}
 
 \begin{document}
 
 	\title{\Huge{Software Requirement Specification}}
-	\author{Group 8}
+	\author{Group 8 \\ J Lewis	28183488\\
+	TGN Machaba	12078027\\
+	NS Manana	12064115\\
+	JF Maree	28004265\\
+	A Volschenk	12054519}
 	\maketitle
 
 	\section{Introduction}
@@ -43,37 +48,7 @@
 
 		Currently the marking process is performed using physical documents. It is required of the marker to obtain a mark sheet from the lecturer, on which the student identification is paired with the results from the practical session. The data is then captured by a third party. This system lacks in accountability and efficiency which can be solved through a software solution and eliminating the need of a third party. The likelihood of marks being lost would also decrease as the data transfer process is diminished from a three step process (marker $\rightarrow$ entry $\rightarrow$ lecturer) to a direct process (marker $\rightarrow$ lecturer). As a result, students would also be able to receive quicker feedback on their work.
 
-	\section{Architectural Requirements}
-
-		\subsection{Access Channel Requiremnets}
-
-			\begin{itemize}
-
-				\item{An Item}
-
-				\item{Another Item}
-
-			\end{itemize}
-
-		\subsection{Quality Requirements}
-
-			\begin{enumerate}
-
-				\item{An Item}
-
-				\item{Another Item}
-
-			\end{enumerate}
-
-		\subsection{Integration Requirements}
-
-			\begin{description}
-
-				\item[first]{An Item}
-
-				\item[second]{Another Item}
-
-			\end{description}
+		\input{person2}
 
 		\subsection{Architecture Constraints}
 		
@@ -154,22 +129,127 @@
 					\item{Create and edit marksheets}
 
 				\end{itemize}
-			
-		\subsection{Scope and Limitations/Exclusions}
+			\subsection{Scope and Exclusions}
+			\subsubsection{Scope}
 			\begin{figure}[h]
 				\caption{High Level Use Case Diagram}
-				\includegraphics[height=10cm]{StudentMarks}
+				\includegraphics[width=1\textwidth]{StudentMarks}
 			\end{figure}
+			\subsubsection{Exclusions}
+				\begin{itemize}
+				
+					\item{The system will not allow registration of Users}
+					
+					\item{The system will not allow allocation of a Student to a Session (Bookings)}
+					
+					\item{The system will not allow deletion of any User}
+					
+					\item{The system will not allow deletion of any Marks}
+				
+				\end{itemize}
 
 		\subsection{Required Functionality}
+		\begin{enumerate}
+		\item The system will have a Web and Android application.
+		\item The system will have a search panel in which a user types in a student's details (student number/ name/ surname) with auto-complete functionality and displays that will show all possible results of the search.
+		\item The system will retrieve the relevant information of a student depending on the access rights said user is granted.
+		\item The system shall allow the recording and editing of marks by lecturers and markers.
+		\item The system will have a history trail of all edits made to existing marks in the database.
+		\item The system aims to provide real-time updates of marks to the database and if this is not possible due to unforseen circumstances, the system will have the option to update information on a smartphone's local storage first.
+		\item The system will provide the following security features:
+		\begin{itemize}
+			\item{Check validity of user attempting to edit before granting access to edit marks.}
+			\item{Automatic log off of a user if the system is not in use for more than 15 minutes.}
+			\item{Automatic lock after a practical session.}
+			\item{Log-in interface to restrict access to the students enrolled, markers and lecturers involved.}
+			\item{User authentication checks}
+			\item{Students will only be able to view their own marks and no other students' marks when logged in.}
+			\item{Markers will only be able to view students in their session}
+			\item{Only lecturers and markers will be granted access to enter marks into the database.}
+			\item{Only lecturers will obtain a list of all the marks.}
+		
+		\end{itemize}
+		
+		\item The system will sanitize the input entered, i.e it will display an error message if the input is invalid.
+		\item When entering marks the system will validate if the student is booked for the session.
+		\item The system will allow only a lecturer to create a session, assign markers to groups of students and set marker priveleges.
+		\item The system will have a reporting functionality that will provide the lecturer with statistics and visual reports such as graphs (distribution, bar), pie charts, average marks, median, mode and standard deviation. 
+		\item The system will provide documents in .csv format as exports of marks to lecturers.
+		
+		\end{enumerate}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1\textwidth]{logIn}
+				\caption{Low Level Use Case Diagrams- Log In}
+			\end{figure}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1\textwidth]{createSession}
+				\caption{Create Session}
+			\end{figure}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1\textwidth]{viewMarks}
+				\caption{View Marks}
+			\end{figure}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1\textwidth]{generateReport}
+				\caption{Generate Report}
+			\end{figure}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1\textwidth]{enterMarks}
+				\caption{Enter Marks}
+			\end{figure}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1\textwidth]{editMarks}
+				\caption{Edit Marks}
+			\end{figure}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1\textwidth]{searchStudent}
+				\caption{Search Student}
+			\end{figure}
 
 		\subsection{Use Case Prioritisation}
-
+			\begin{enumerate}
+			\item Critical: System is cancelled if functionality is not provided.
+			\begin{itemize}
+			\item{Lock System - System runs the risk of security breaches if it is not locked.}
+			\item{View Marks - The system is rendered useless if users cannot view the marks and details of students whose marks have been entered.}
+			\item{Login - Important for access control to prevent unauthorised users entering the system.}
+			\item {Set privileges - The system can be susceptible to hacking and corruption of data if this requirement isn't included, which will result in a useless system}
+			\item {Create Session - Without this ability the system would not have students to assign to be marked thus rendering the system useless.}
+			\item {Edit Marks - Without this functionality the system is susceptible to have incorrect data due to human error that cannot be fixed once entered.}
+			\item {Check validity of editor - Once again the system will run the risk of corruption of data if the editor is not authorised to edit the marks.}
+			\item {Enter Marks - The marker and lecturer must be able to enter marks otherwise the system is rendered useless.}
+			\item {Sanitize input - Invalid input will corrupt the data rendering the system useless.}
+			\end{itemize}
+			\item Important: System still functional without requirement but client will get less value from it.
+			\begin{itemize}
+			\item {Search Student - One can still scroll down the list to find a student and the functionality will still remain intact but the system will be less useful.}
+			\item { Generate Report - The functionality of recording the marks and storing them in a database is still intact but the system is less useful if you cannot interpret the results}
+			\item { Record edits in history trail - This is necessary for accountability if a marker or lecturer changes the marks of students.}
+			\end{itemize}
+			\item Nice-to-have: Specified requirement but its value is insignificant.
+			\begin{itemize}
+				\item{Update database in real-time - This isn't a requirement essential for the functioning for the system but it will make the system more efficient}		
+			\end{itemize}
+			\end{enumerate}
 		\subsection{Use Case/Service Contracts}
 
 		\subsection{Process Specification}
 
 		\subsection{Domain Objects}
+		
+			\subsubsection{Class Diagram}
+			
+			\begin{figure}[h]
+				\caption{Class Diagram}
+				\includegraphics[width=1\textwidth]{StudentMarksClassDiagram}
+			\end{figure}
 
 	\section{Open Issues}
 
