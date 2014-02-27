@@ -12,6 +12,8 @@
 	A Volschenk	12054519}
 	\maketitle
 
+Group Repository: https://github.com/juanmaree/COS301-Group-8
+
 	\section{Introduction}
 
 		The purpose of this document is to present a detailed description for the mark record and tracking solution intended for the Computer Science department of the University of Pretoria. It will explain the purpose and features of the system, what the system will do, as well as the constraints under which it must operate. This document is intended as an official contract between the stakeholders and developers of the system.
@@ -126,7 +128,7 @@
 					
 					\item{Assign system functions to Markers}
 					
-					\item{Create and edit marksheets}
+					\item{Create and edit mark sheets}
 
 				\end{itemize}
 			\subsection{Scope and Exclusions}
@@ -155,7 +157,7 @@
 		\item The system will retrieve the relevant information of a student depending on the access rights said user is granted.
 		\item The system shall allow the recording and editing of marks by lecturers and markers.
 		\item The system will have a history trail of all edits made to existing marks in the database.
-		\item The system aims to provide real-time updates of marks to the database and if this is not possible due to unforseen circumstances, the system will have the option to update information on a smartphone's local storage first.
+		\item The system aims to provide real-time updates of marks to the database and if this is not possible due to unforeseen circumstances, the system will have the option to update information on a smart-phone's local storage first.
 		\item The system will provide the following security features:
 		\begin{itemize}
 			\item{Check validity of user attempting to edit before granting access to edit marks.}
@@ -172,7 +174,7 @@
 		
 		\item The system will sanitize the input entered, i.e it will display an error message if the input is invalid.
 		\item When entering marks the system will validate if the student is booked for the session.
-		\item The system will allow only a lecturer to create a session, assign markers to groups of students and set marker priveleges.
+		\item The system will allow only a lecturer to create a session, assign markers to groups of students and set marker privileges.
 		\item The system will have a reporting functionality that will provide the lecturer with statistics and visual reports such as graphs (distribution, bar), pie charts, average marks, median, mode and standard deviation. 
 		\item The system will provide documents in .csv format as exports of marks to lecturers.
 		
@@ -247,7 +249,7 @@
 						\textit{Pre-Conditions:}
 								\begin{itemize}
 									\item The student must be registered for the module.
-									\item The student's session marksheet should be locked.
+									\item The student's session mark sheet should be locked.
 								\end{itemize}
 								
 						\textit{Post-Conditions:}
@@ -276,19 +278,19 @@
 								
 						\textit{Post-Conditions:}
 								\begin{itemize}
-									\item The students's marks are in the database.
+									\item The student's marks are in the database.
 									\item The student's Marks have been entered is added to the Log.
 								\end{itemize}
 														
 				\item	\textbf{Edit Marks[UC4]}\\*
 						\textit{Pre-Conditions:}
 								\begin{itemize}
-									\item The Lecturer must be a Lecturer for the module.
+									\item The lecturer must be a Lecturer for the module.
 								\end{itemize}
 								
 						\textit{Post-Conditions:}
 								\begin{itemize}
-									\item The new marks are in the databse.
+									\item The new marks are in the database.
 									\item The mark changes are added to the Log.
 								\end{itemize}
 														
@@ -312,14 +314,14 @@
 								
 						\textit{Post-Conditions:}
 								\begin{itemize}
-									\item The marker's privileges are set in the databse.
+									\item The marker's privileges are set in the database.
 									\item The marker's Privilege changes are added to the Log.
 								\end{itemize}
 														
 				\item	\textbf{Generate Reports[UC7]}\\*
 						\textit{Pre-Conditions:}
 								\begin{itemize}
-									\item The Lecturer must be a Lecturer for the module.
+									\item The lecturer must be a Lecturer for the module.
 									\item The sessions should all be locked.
 								\end{itemize}
 								
@@ -331,27 +333,27 @@
 				\item	\textbf{Create Marksheet[UC8]}\\*
 						\textit{Pre-Conditions:}
 								\begin{itemize}
-									\item The Lecturer must be a Lecturer for the module.
-									\item The marksheet should not already exist.
+									\item The lecturer must be a Lecturer for the module.
+									\item The mark sheet should not already exist.
 								\end{itemize}
 								
 						\textit{Post-Conditions:}
 								\begin{itemize}
-									\item The new Marksheet is created.
-									\item The Marksheet creation is added to the Log.
+									\item The new mark sheet is created.
+									\item The mark sheet creation is added to the Log.
 								\end{itemize}
 														
-				\item	\textbf{Edit Marksheet[UC9]}\\*
+				\item	\textbf{Edit Mark sheet[UC9]}\\*
 						\textit{Pre-Conditions:}
 								\begin{itemize}
-									\item The Lecturer must be a Lecturer for the module.
-									\item The marksheet should already exist.
+									\item The lecturer must be a Lecturer for the module.
+									\item The mark sheet should already exist.
 								\end{itemize}
 								
 						\textit{Post-Conditions:}
 								\begin{itemize}
-									\item The Changes are saved to the marksheet.
-									\item The Marksheet was edited is added to the Log.
+									\item The Changes are saved to the mark sheet.
+									\item The mark sheet was edited is added to the Log.
 								\end{itemize}
 														
 				\item	\textbf{Create Session[UC10]}\\*
@@ -396,7 +398,7 @@
 				\item	\textbf{View all marks[UC13]}\\*
 						\textit{Pre-Conditions:}
 								\begin{itemize}
-									\item The Lecturer must be a Lecturer for the module.
+									\item The lecturer must be a lecturer for the module.
 									\item The sessions should all be locked.
 								\end{itemize}
 								
@@ -434,9 +436,9 @@
 	
 		\begin{itemize}
 			\item Security problems with a marker that can lose their mobile device and then someone else can enter marks.
-			\item Android device might break or run out of battery power while it is being used, this can cuase marks not being entered.
+			\item Android device might break or run out of battery power while it is being used, this can cause marks not being entered.
 			\item We don't yet know how the interface to the system looks.
-			\item Integration to the Computer Science website and the existing user databse.
+			\item Integration to the Computer Science website and the existing user database.
 			\item The system cannot be responsible for human errors such as a marker forgetting to log out and then someone else can use the system.
 		\end{itemize}
 	
@@ -448,7 +450,7 @@
 			\item Pre-Condition - A condition that must be satisfied Before the given service or use case.
 			\item Post-Condition - A condition that must be satisfied After the given service or use case.
 			\item Android Application - Software created to run on a mobile device running Google's Android operating system.
-			\item LDAP - The databse that will be integrated with.
+			\item LDAP - The database that will be integrated with.
 			\item SSL - A security protocol used for the internet.
 			\item Encryption - Conversion of data so that unauthorized people can't view the data.
 			\item DJANGO Framework - A High-level Python web framework.
