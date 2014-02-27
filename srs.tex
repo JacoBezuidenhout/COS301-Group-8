@@ -413,10 +413,16 @@
 		\subsection{Process Specification}
 		
 		
-		\begin{figure}[H]
+			\begin{figure}[H]
 				\centering
 				\includegraphics[width=1\textwidth]{CreateSessionActivityDiagram}
 				\caption{Create Session Activity Diagram}
+			\end{figure}
+			
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1\textwidth]{EnterMarksActivityDiagram}
+				\caption{CEnter Marks Activity Diagram}
 			\end{figure}
 
 		\subsection{Domain Objects}
@@ -429,6 +435,14 @@
 			\end{figure}
 
 	\section{Open Issues}
+	
+		\begin{itemize}
+			\item Security problems with a marker that can lose their mobile device and then someone else can enter marks.
+			\item Android device might break or run out of battery power while it is being used, this can cuase marks not being entered.
+			\item We don't yet know how to interface to the system looks.
+			\item The system cannot be responsible for human errors such as a marker forgetting to log out and then someone else can use the system.
+		\end{itemize}
+	
 
 	\section{Glossary}
 		
